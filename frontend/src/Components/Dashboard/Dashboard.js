@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
 import dashboardImage from "../Assets/dashboard_image.svg";
-import Popup from "../Popup/Popup";
+import Popup from "../Popup/Popup.js";
 import {
   calculateScore,
   calculateSpecificScores,
@@ -226,7 +226,10 @@ const Dashboard = () => {
   const handleActiveExercise = (index) => {
     setActiveIndex(index);
     setSpecificAnswers(runs[index].specificAnswers);
-    localStorage.setItem("specific_answers", JSON.stringify(runs[index].specificAnswers))
+    localStorage.setItem(
+      "specific_answers",
+      JSON.stringify(runs[index].specificAnswers)
+    );
   };
 
   return isAuth() ? (
@@ -335,7 +338,11 @@ const Dashboard = () => {
         </div>
         <div className="dashboard-right-container">
           <div className="piechart-container">
-            {numRuns ? <PieChart specificAnswers={specificAnswers}/> : <h1>PLAY YOUR FIRST GAME</h1>}
+            {numRuns ? (
+              <PieChart specificAnswers={specificAnswers} />
+            ) : (
+              <h1>PLAY YOUR FIRST GAME</h1>
+            )}
           </div>
           <div className="dashboard-right-bottom-container">
             <div className="dashboard-right-bottom-text">
