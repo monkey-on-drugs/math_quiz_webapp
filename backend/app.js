@@ -6,7 +6,12 @@ const cookieParser = require("cookie-parser");
 const errorMiddleware = require("./middlewares/error.js")
 
 app.use(express.json())
-app.use(cors())
+app.use(
+  cors({
+    origin: "https://your-frontend-domain.com",
+    credentials: true,
+  })
+);
 app.use(cookieParser())
 
 // Import routes
