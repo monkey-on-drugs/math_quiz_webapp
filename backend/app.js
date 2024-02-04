@@ -8,7 +8,7 @@ const errorMiddleware = require("./middlewares/error.js")
 app.use(express.json())
 app.use(
   cors({
-    origin: "https://your-frontend-domain.com",
+    origin: "https://math-quiz-webapp-f.vercel.app/",
     credentials: true,
   })
 );
