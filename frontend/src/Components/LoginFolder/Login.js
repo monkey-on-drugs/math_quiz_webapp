@@ -1,4 +1,3 @@
-require("dotenv").config({ path: "../frontend/.env" });
 import React, { useState } from 'react';
 import './Login.css';
 import user_icon from '../Assets/user_icon_black-login.PNG';
