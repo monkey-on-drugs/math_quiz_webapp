@@ -6,13 +6,17 @@ const cookieParser = require("cookie-parser");
 const errorMiddleware = require("./middlewares/error.js");
 
 app.use(express.json());
-app.use(
-  cors({
-    origin: "https://math-quiz-webapp-jopc.vercel.app",
-    credentials: true,
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  })
-);
+app.use(cors());
+app.options("*", cors());
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 app.use(cookieParser());
 
 // Import routes
