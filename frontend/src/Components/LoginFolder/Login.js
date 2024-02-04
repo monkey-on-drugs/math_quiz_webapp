@@ -13,7 +13,7 @@ const Login = () => {
 
   const handleLoginButton = async () => {
     const response = await fetch(
-      `https://math-quiz-webapp-jopc.vercel.app/backend-api/login`,
+      `https://math-quiz-webapp-jopc.vercel.app/login`,
       {
         method: "POST",
         headers: {
@@ -38,7 +38,7 @@ const Login = () => {
 
   const handleRegisterButton = async () => {
     const response = await fetch(
-      `https://math-quiz-webapp-jopc.vercel.app/backend-api/register`,
+      `https://math-quiz-webapp-jopc.vercel.app/register`,
       {
         method: "POST",
         headers: {
