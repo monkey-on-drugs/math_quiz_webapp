@@ -1,3 +1,4 @@
+require("dotenv").config({ path: "../frontend/.env" });
 import React, { useState } from 'react';
 import './Login.css';
 import user_icon from '../Assets/user_icon_black-login.PNG';
@@ -6,7 +7,6 @@ import user_logo from '../Assets/user_icon_grey-login.PNG';
 import { authenticate, isAuth } from '../../helpers/auth.js'
 import { Navigate, useNavigate } from "react-router-dom"
 import { useAlert } from 'react-alert';
-require("dotenv").config({ path: "frontend/.env" });
 
 const Login = () => {
     const navigate = useNavigate()
